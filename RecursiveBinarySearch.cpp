@@ -20,29 +20,29 @@ bool RecursiveBinarySearch::search(std::vector<int> list, int x){
     int size=list.size();
     std::cout<<"Middle: "<<middle<<std::endl;
     if (list.at(middle)==x){
-        std::cout<<"Option 1"<<std::endl;
+        //std::cout<<"Option 1"<<std::endl;
         return true;
     }
     if (size<3){
         if (list.at(0)==x || list.at(1)==x){
-            std::cout<<"Option 2.1"<<std::endl;
+            //std::cout<<"Option 2.1"<<std::endl;
             return true;
         }
         else if (list.at(0)!=x || list.at(1)!=x){
-            std::cout<<"Option 2.2"<<std::endl;
+            //std::cout<<"Option 2.2"<<std::endl;
             return false;
         }
     }
     if (list.at(middle)>x){
-        std::cout<<"Option 3"<<std::endl;
+        //std::cout<<"Option 3"<<std::endl;
         list.erase(list.begin()+middle+1,list.end());
-        print (list);
+        //print (list);
         return search(list,x);
     }
     else if (list.at(middle)<x){
-        std::cout<<"Option 4"<<std::endl;
+        //std::cout<<"Option 4"<<std::endl;
         list.erase(list.begin(),list.begin()+middle+1);
-        print (list);
+        //print (list);
         return search(list,x);
     }
     return 0;
