@@ -18,13 +18,13 @@ void print (std::vector<int> list){
 bool RecursiveBinarySearch::search(std::vector<int> list, int x){
     int middle=ceil((list.size()/2));
     int size=list.size();
-    std::cout<<"Middle: "<<middle<<std::endl;
+    //std::cout<<"Middle: "<<middle<<std::endl;
     if (list.at(middle)==x){
         //std::cout<<"Option 1"<<std::endl;
         return true;
     }
     if (size<3){
-        if (list.at(0)==x || list.at(1)==x){
+        if (list.front()==x || list.back()==x){
             //std::cout<<"Option 2.1"<<std::endl;
             return true;
         }
