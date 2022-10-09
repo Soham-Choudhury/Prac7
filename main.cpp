@@ -63,9 +63,9 @@ int main (){
     //};
 
     RecursiveBinarySearch searchlist;
-    cout<<"Enter value to search: "<<endl;
+    //cout<<"Enter value to search: "<<endl;
     int n=1;
-    cin>>n;
+    //cin>>n;
     //cout<<n<<endl;
     //bool value=0;
     bool value=searchlist.search(bubblelist, n);
