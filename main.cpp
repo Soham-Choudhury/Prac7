@@ -3,7 +3,6 @@
 #include <vector>
 #include "Sort.h"
 #include "BubbleSort.h"
-//#include "QuickSort2.h"
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 using namespace std;
@@ -11,7 +10,7 @@ using namespace std;
 
 int main (){
     vector<int> list; //vector to hold integer input list
-    cout<<"Enter list:"<<endl;
+    //cout<<"Enter list:"<<endl;
     std::string input=""; //variable to hold input as string
     getline (cin >> ws,input); //taking input including spaces
     //input="5 8 4 9 2 7 6";
@@ -39,20 +38,20 @@ int main (){
     BubbleSort bubblesort;
     std::vector<int> bubblelist=bubblesort.sort(list);
     int size=bubblelist.size();
-    for (int x=0;x<size;x++){
-        if (x==size-1){
-            cout<<bubblelist.at(x)<<endl;
-        }
-        else{
-            cout<<bubblelist.at(x)<<" ";
-        }
-    };
+    //for (int x=0;x<size;x++){
+    //    if (x==size-1){
+    //        cout<<bubblelist.at(x)<<endl;
+    //    }
+    //    else{
+    //        cout<<bubblelist.at(x)<<" ";
+    //    }
+    //};
 
     
     
     
-    //QuickSort2 quicksort;
-    //std::vector<int> quicklist=quicksort.sort(list);
+    QuickSort quicksort;
+    std::vector<int> quicklist=quicksort.sort(list);
     //cout<<"Quicklist: ";
     //for (int a=0;a<size;a++){
     //    if (a==size-1){
@@ -65,7 +64,7 @@ int main (){
 
     RecursiveBinarySearch searchlist;
     cout<<"Enter value to search: "<<endl;
-    //int n=1;
+    int n=1;
     cin>>n;
     //cout<<n<<endl;
     //bool value=0;
