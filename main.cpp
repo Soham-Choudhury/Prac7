@@ -10,12 +10,12 @@ using namespace std;
 
 int main (){
     vector<int> list; //vector to hold integer input list
-    //cout<<"Enter list:"<<endl;
+    cout<<"Enter list:"<<endl;
     std::string input=""; //variable to hold input as string
-    //getline (cin >> ws,input); //taking input including spaces
+    getline (cin >> ws,input); //taking input including spaces
     //input="5 8 4 9 2 7 6";
     //input="0 3 5 1 -5 100 7777 2014";
-    input="0 3 5 4 -5 100 7777 2014";
+    //input="0 3 5 4 -5 100 7777 2014";
     string target=" "; //variable holding the target to aim for the space to differentiate between different ints
     string hold=""; //variable and temp hold space
     int targetfound=0; // hold location of first area with comma, hence end of first int
@@ -64,8 +64,8 @@ int main (){
 
     RecursiveBinarySearch searchlist;
     cout<<"Enter value to search: "<<endl;
-    int n=1;
-    //cin>>n;
+    //int n=1;
+    cin>>n;
     cout<<n<<endl;
     //bool value=0;
     bool value=searchlist.search(bubblelist, n);
