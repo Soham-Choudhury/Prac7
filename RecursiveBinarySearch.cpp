@@ -1,49 +1,92 @@
-#include "RecursiveBinarySearch.h"
-#include <vector>
-#include <cmath>
 #include <iostream>
+#include <string>
+#include <vector>
+#include "Sort.h"
+#include "BubbleSort.h"
+#include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 using namespace std;
-void print (std::vector<int> list){
-    int size=list.size();
-    int a;
-    for (a=0;a<size;a++){
-        if (a==size-1){
-            cout<<list.at(a)<<endl;
+
+
+int main (){
+    vector<int> list; //vector to hold integer input list
+    //cout<<"Enter list:"<<endl;
+    std::string input=""; //variable to hold input as string
+    //getline (cin >> ws,input); //taking input including spaces
+    //input="5 8 4 9 2 7 6";
+    //input="0 3 5 1 -5 100 7777 2014";
+    input="0 3 5 4 -5 100 7777 2014";
+    string target=" "; //variable holding the target to aim for the space to differentiate between different ints
+    string hold=""; //variable and temp hold space
+    int targetfound=0; // hold location of first area with comma, hence end of first int
+    int sizeofin=input.size(); //size of input string
+
+    for (int z=0; z<sizeofin;z++){ //taking input line and putting integers in vector
+        targetfound=input.find(target); // finding location of first space
+        if (targetfound==-1){
+            hold=input.substr(0,input.size());
+            list.push_back(stoi(hold));
+            input.erase(0,input.size());
+            break;
         }
-        else{
-            cout<<list.at(a)<<" ";
+        else if (targetfound!= -1){
+            hold=input.substr(0,targetfound); // taking out first int out of string input
+            list.push_back(stoi(hold)); //converting input number from string to integer and holding in vector values
+            input.erase(0,targetfound+1); //erasing first int and space in input string
         }
     };
-}
-bool RecursiveBinarySearch::search(std::vector<int> list, int x){
-    int middle=ceil((list.size()/2));
-    int size=list.size();
-    //std::cout<<"Middle: "<<middle<<std::endl;
-    if (list.at(middle)==x){
-        //std::cout<<"Option 1"<<std::endl;
-        return true;
-    }
-    if (size<3){
-        if (list.front()==x || list.back()==x){
-            //std::cout<<"Option 2.1"<<std::endl;
-            return true;
+    BubbleSort bubblesort;
+    std::vector<int> bubblelist=bubblesort.sort(list);
+    int size=bubblelist.size();
+    for (int x=0;x<size;x++){
+        if (x==size-1){
+            cout<<bubblelist.at(x)<<endl;
         }
-        else if (list.at(0)!=x || list.at(1)!=x){
-            //std::cout<<"Option 2.2"<<std::endl;
-            return false;
+        else{
+            cout<<bubblelist.at(x)<<" ";
         }
+    };
+
+    
+    
+    
+    QuickSort quicksort;
+    std::vector<int> quicklist=quicksort.sort(list);
+    //cout<<"Quicklist: ";
+    //for (int a=0;a<size;a++){
+    //    if (a==size-1){
+    //        cout<<quicklist.at(a)<<endl;
+    //    }
+    //    else{
+    //        cout<<quicklist.at(a)<<" ";
+    //    }
+    //};
+
+    RecursiveBinarySearch searchlist;
+    cout<<"Enter value to search: "<<endl;
+    int n=1;
+    cin>>n;
+    cout<<n<<endl;
+    //bool value=0;
+    bool value=searchlist.search(bubblelist, n);
+    if (value==1){
+        cout<<"true ";
     }
-    if (list.at(middle)>x){
-        //std::cout<<"Option 3"<<std::endl;
-        list.erase(list.begin()+middle+1,list.end());
-        //print (list);
-        return search(list,x);
+    else {
+        cout<<"false ";
     }
-    else if (list.at(middle)<x){
-        //std::cout<<"Option 4"<<std::endl;
-        list.erase(list.begin(),list.begin()+middle+1);
-        //print (list);
-        return search(list,x);
-    }
-    return 0;
+
+    for (int a=0;a<size;a++){
+        if (a==size-1){
+            cout<<bubblelist.at(a)<<endl;
+        }
+        else{
+            cout<<bubblelist.at(a)<<" ";
+        }
+    };
+
+
+
+    
+return 0;
 };
