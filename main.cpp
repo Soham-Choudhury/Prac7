@@ -4,6 +4,7 @@
 #include "Sort.h"
 #include "BubbleSort.h"
 //#include "QuickSort2.h"
+#include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 using namespace std;
 
@@ -66,7 +67,7 @@ int main (){
     cout<<"Enter value to search: "<<endl;
     //int n=1;
     cin>>n;
-    cout<<n<<endl;
+    //cout<<n<<endl;
     //bool value=0;
     bool value=searchlist.search(bubblelist, n);
     if (value==1){
