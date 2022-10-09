@@ -1,7 +1,6 @@
 #include "QuickSort.h"
 #include <vector>
 #include <iostream>
-#include <list>
 using namespace std;
 
 std::vector<int> QuickSort::sort(std::vector<int> list){
@@ -17,7 +16,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list){
         pivotloc=0;
     }
     pivot=list.at(pivotloc);
-    cout<<"Pivot: "<<pivot<<endl;
+    //cout<<"Pivot: "<<pivot<<endl;
     for (i=0;i<size;i++){
         if (list.at(i)<pivot && pivotloc<i){
             hold=list.at(i);
@@ -27,14 +26,14 @@ std::vector<int> QuickSort::sort(std::vector<int> list){
             hold=0;
         };
         //cout<<"Quicklist: ";
-        for (int a=0;a<size;a++){
-            if (a==size-1){
-                cout<<list.at(a)<<endl;
-            }
-            else{
-                cout<<list.at(a)<<" ";
-            }
-        };
+        //for (int a=0;a<size;a++){
+        //    if (a==size-1){
+        //        cout<<list.at(a)<<endl;
+        //    }
+        //    else{
+        //        cout<<list.at(a)<<" ";
+        //    }
+        
     };
    
     return list;
