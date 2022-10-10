@@ -7,4 +7,4 @@ class BubbleSort : public Sort {
     virtual std::vector<int> sort(std::vector<int> list);
 };
 
-#endif // PAPERDOLL
+#endif 

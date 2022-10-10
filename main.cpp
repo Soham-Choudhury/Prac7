@@ -36,7 +36,7 @@ int main (){
         }
     };
     BubbleSort bubblesort;
-    std::vector<int> bubblelist=bubblesort.sort(list);
+    std::vector<int> bubblelist=bubblesort.sort(list); //sort using bubble sort
     int size=bubblelist.size();
     //for (int x=0;x<size;x++){
     //    if (x==size-1){
@@ -51,7 +51,7 @@ int main (){
     
     
     QuickSort quicksort;
-    std::vector<int> quicklist=quicksort.sort(list);
+    std::vector<int> quicklist=quicksort.sort(list); //sort using quicksort
     //cout<<"Quicklist: ";
     //for (int a=0;a<size;a++){
     //    if (a==size-1){
@@ -68,15 +68,15 @@ int main (){
     //cin>>n;
     //cout<<n<<endl;
     //bool value=0;
-    bool value=searchlist.search(bubblelist, n);
-    if (value==1){
+    bool value=searchlist.search(bubblelist, n); //search for value n in list of integers
+    if (value==1){ //if value is found, output true, vice versa
         cout<<"true ";
     }
     else {
         cout<<"false ";
     }
 
-    for (int a=0;a<size;a++){
+    for (int a=0;a<size;a++){ //printing values of sorted list
         if (a==size-1){
             cout<<bubblelist.at(a)<<endl;
         }
